@@ -9,7 +9,7 @@
 @property (nonatomic, strong) NSMutableData *data;
 @property (nonatomic, copy) QueueServiceSuccess successCallback;
 @property (nonatomic, copy) QueueServiceFailure failureCallback;
-@property (nonatomic, weak) id<QueueService_NSURLConnectionRequestDelegate> delegate;
+@property (nonatomic, weak) id<QueueClient_NSURLConnectionRequestDelegate> delegate;
 @property (nonatomic, strong) NSString *uniqueIdentifier;
 @property (nonatomic, assign) NSInteger expectedStatusCode;
 @property (nonatomic, assign) NSInteger actualStatusCode;
@@ -22,7 +22,7 @@
              expectedStatusCode:(NSInteger)statusCode
                         success:(QueueServiceSuccess)success
                         failure:(QueueServiceFailure)failure
-                       delegate:(id<QueueService_NSURLConnectionRequestDelegate>)delegate
+                       delegate:(id<QueueClient_NSURLConnectionRequestDelegate>)delegate
 {
     if ((self = [super init])) {
         self.request = request;
@@ -57,7 +57,7 @@
         self.failureCallback(error, @"Unexpected failure occured.");
     });
 
-    [self.delegate apiRequestDidComplete:self];
+    [self.delegate requestDidComplete:self];
 }
 
 #pragma mark - NSURLConnectionDataDelegate
@@ -111,7 +111,7 @@
         });
     }
 
-    [self.delegate apiRequestDidComplete:self];
+    [self.delegate requestDidComplete:self];
 }
 
 #pragma mark - Private helpers

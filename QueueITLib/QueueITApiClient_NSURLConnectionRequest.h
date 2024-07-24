@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "QueueITApiClient.h"
 
-@protocol QueueService_NSURLConnectionRequestDelegate;
+@protocol QueueClient_NSURLConnectionRequestDelegate;
 
 @interface QueueITApiClient_NSURLConnectionRequest : NSObject<NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
@@ -11,10 +11,10 @@
              expectedStatusCode:(NSInteger)statusCode
                         success:(QueueServiceSuccess)success
                         failure:(QueueServiceFailure)failure
-                       delegate:(id<QueueService_NSURLConnectionRequestDelegate>)delegate;
+                       delegate:(id<QueueClient_NSURLConnectionRequestDelegate>)delegate;
 
 @end
 
-@protocol QueueService_NSURLConnectionRequestDelegate <NSObject>
-- (void)apiRequestDidComplete:(QueueITApiClient_NSURLConnectionRequest *)request;
+@protocol QueueClient_NSURLConnectionRequestDelegate <NSObject>
+- (void)requestDidComplete:(QueueITApiClient_NSURLConnectionRequest *)request;
 @end

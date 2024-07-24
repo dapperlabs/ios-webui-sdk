@@ -1,7 +1,7 @@
 #import "QueueITApiClient_NSURLConnection.h"
 #import "QueueITApiClient_NSURLConnectionRequest.h"
 
-@interface QueueITApiClient_NSURLConnection()<QueueService_NSURLConnectionRequestDelegate>
+@interface QueueITApiClient_NSURLConnection()<QueueClient_NSURLConnectionRequestDelegate>
 @end
 
 
@@ -39,7 +39,7 @@
 
 #pragma mark - NSURLConnectionRequestDelegate
 
-- (void)apiRequestDidComplete:(QueueITApiClient_NSURLConnectionRequest *)request
+- (void)requestDidComplete:(QueueITApiClient_NSURLConnectionRequest *)request
 {
 }
 
