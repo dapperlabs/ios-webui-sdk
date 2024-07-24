@@ -39,7 +39,7 @@
 
 #pragma mark - NSURLConnectionRequestDelegate
 
-- (void)requestDidComplete:(QueueITApiClient_NSURLConnectionRequest *)request
+- (void)apiRequestDidComplete:(QueueITApiClient_NSURLConnectionRequest *)request
 {
 }
 

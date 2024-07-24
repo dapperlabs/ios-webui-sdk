@@ -16,5 +16,5 @@
 @end
 
 @protocol QueueService_NSURLConnectionRequestDelegate <NSObject>
-- (void)requestDidComplete:(QueueITApiClient_NSURLConnectionRequest *)request;
+- (void)apiRequestDidComplete:(QueueITApiClient_NSURLConnectionRequest *)request;
 @end

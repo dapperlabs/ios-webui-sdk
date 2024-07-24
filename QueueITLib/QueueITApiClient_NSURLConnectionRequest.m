@@ -57,7 +57,7 @@
         self.failureCallback(error, @"Unexpected failure occured.");
     });
 
-    [self.delegate requestDidComplete:self];
+    [self.delegate apiRequestDidComplete:self];
 }
 
 #pragma mark - NSURLConnectionDataDelegate
@@ -111,7 +111,7 @@
         });
     }
 
-    [self.delegate requestDidComplete:self];
+    [self.delegate apiRequestDidComplete:self];
 }
 
 #pragma mark - Private helpers
